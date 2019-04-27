@@ -23,7 +23,8 @@ python版本：python3.5，依赖records库
 我在起名时，都以项目名作为爬虫名
 
 ## 当前所有项目
-|项目名|网站|数据|描述|
-|-|-|-|-|
-|famous_words|[lab.scrapyd.cn](lab.scrapyd.cn)|名言|学习过程中的第一只scrapy爬虫
+|项目名|网站|数据|描述|日期|
+|-|-|-|-|-|
+|famous_words|[lab.scrapyd.cn](lab.scrapyd.cn)|名言|学习过程中的第一只scrapy爬虫|2019-4-8|
+|douban_book|[豆瓣图书](book.douban.com)|图书信息|根据标签进行爬取，爬取字段有作者，价格，评分等信息|2019-4-26|
 
