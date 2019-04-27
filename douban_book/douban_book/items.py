@@ -20,6 +20,10 @@ class DoubanBookItem(scrapy.Item):
     press = scrapy.Field()
     url = scrapy.Field()
     comment_num = scrapy.Field()
+    
+class HistoryItem(scrapy.Item):
+    url = scrapy.Field()
+    date = scrapy.Field()
 '''
 class Author(scrapy.Item):
     name = scrapy.Field()

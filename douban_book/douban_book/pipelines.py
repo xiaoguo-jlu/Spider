@@ -15,6 +15,7 @@ class DoubanBookPipeline(object):
                                    connect_args = {'charset':'utf8'})
         self.price_re = re.compile("\d+\.?\d+")
         query = '''
+        DROP TABLE book;
         CREATE TABLE IF NOT EXISTS book 
         (
             id int(11) AUTO_INCREMENT,
@@ -33,7 +34,8 @@ class DoubanBookPipeline(object):
         self.db.query(query)
 
     def process_item(self, item, spider):
-        #print(item)
+        if not item['score']:
+            item['score'] = '0.0'
         query = '''
             INSERT INTO book (book_name,author,year,price,score,tags,press,url,comment_num) 
             VALUES 
@@ -52,3 +54,10 @@ class DoubanBookPipeline(object):
         except MySQLdb._exceptions.OperationalError:
             print("录入%s信息时数据错误"%(item['book_name']))
         return item
+
+class HistoryPipeline(object):
+    def __init__(self):
+        pass
+    
+    def process_item(self,item):
+        pass
